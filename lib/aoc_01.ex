@@ -29,8 +29,7 @@ defmodule AdventOfCode do
       acc
     end
 
-    list = tail
-    calc_sum(list, acc, orig)
+    calc_sum(tail, acc, orig)
   end
 
   def main(args) do
