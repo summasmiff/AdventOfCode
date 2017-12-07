@@ -3,10 +3,10 @@ defmodule Aoc.Mixfile do
 
   def project do
     [
-      app: :aoc_01,
+      app: :aoc_02,
       version: "0.1.0",
       elixir: "~> 1.5",
-      escript: [main_module: AdventOfCode],
+      escript: [main_module: AdventOfCodeDay2],
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
