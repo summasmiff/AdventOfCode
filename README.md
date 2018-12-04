@@ -14,7 +14,5 @@ def project do
     ]
 end
 ```
-Run using the filename with the input as the first argument.
-
-Day 1: `./aoc_01 "input_01.txt"`
-Day 2: `./aoc_02 "input_02.tsv"`
+To run:
+`./aoc #{day_number} #{input}`

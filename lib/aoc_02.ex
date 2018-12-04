@@ -1,4 +1,4 @@
-defmodule AdventOfCodeDay2 do
+defmodule AdventOfCode.Day2 do
   # Calculate the checksum of input_02.tsv.
   # For each row, determine the difference between the largest value and the smallest
   # value; the checksum is the sum of all of these differences.
@@ -21,7 +21,7 @@ defmodule AdventOfCodeDay2 do
     row = integerify(head)
     |> Enum.sort()
 
-    acc = with [least | _] = row, [most | _ ] = Enum.reverse(row) do
+    with [least | _] = row, [most | _ ] = Enum.reverse(row) do
       sum = most - least
       sum + acc
     end
