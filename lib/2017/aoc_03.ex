@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Day3 do
+defmodule AdventOfCode2017.Day3 do
   def build_row([head | _] = array, start_num) do
 
     if head == start_num do

@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Day2 do
+defmodule AdventOfCode2017.Day2 do
   # Calculate the checksum of input_02.tsv.
   # For each row, determine the difference between the largest value and the smallest
   # value; the checksum is the sum of all of these differences.

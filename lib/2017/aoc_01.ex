@@ -1,4 +1,4 @@
-defmodule AdventOfCode.Day1 do
+defmodule AdventOfCode2017.Day1 do
   def calc_sum([], acc), do: acc
   def calc_sum([head | []], acc, orig) do
     acc = if head == orig, do: acc + head, else: acc
