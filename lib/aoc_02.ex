@@ -23,7 +23,6 @@ defmodule AdventOfCode.Day2 do
 
   def update_count_list([], count_list), do: count_list
   def update_count_list([h | t], count_list) do
-    # for each letter in the item
     count = get_match_count(h, t, 1)
 
     count_list = if(count >= 2 && !Enum.member?(count_list, count)) do
@@ -32,7 +31,6 @@ defmodule AdventOfCode.Day2 do
       count_list
     end
 
-    # move on to next letter
     update_count_list(t, count_list)
   end
 
@@ -41,7 +39,6 @@ defmodule AdventOfCode.Day2 do
   end
   def calc([head | list], [check_2 | check_3] = checksum_list) do
     letter_array = String.graphemes(head)
-    #do first word
     count_list = update_count_list(letter_array, [])
 
     checksum_list = case count_list do
@@ -52,14 +49,12 @@ defmodule AdventOfCode.Day2 do
       _ -> checksum_list
     end
 
-    #move to next word
     calc(list, checksum_list)
   end
 
   def compare_words([], _, list), do: list
   def compare_words(_, [], list), do: list
   def compare_words([first_h | first_t], [second_h | second_t], list) do
-    # if it matches the same position in word2, put it in the array
     list = if (first_h == second_h) do
       [first_h | list]
     else
@@ -81,17 +76,15 @@ defmodule AdventOfCode.Day2 do
   end
 
   def calc2([h | []], list1) do
-    IO.puts("b")
     word1 = String.graphemes(h)
-
     list = compare_words(word1, list1, [])
+
     cond do
       length(list) > length(list1) -> list
       true -> list1
     end
   end
   def calc2([h | tail], list1) do
-    IO.puts("a")
     word1 = String.graphemes(h)
     list = compare_against_list(word1, tail, list1)
 
